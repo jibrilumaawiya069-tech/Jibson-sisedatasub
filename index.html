@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ha" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIBSON DATA SUB | Affordable Data & Airtime</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#1e1b4b',
+                        },
+                        mtn: '#ffcc00',
+                        airtel: '#e60000',
+                        glo: '#008751',
+                        nine: '#005a36'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .network-tab-active {
+            box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-100 flex flex-col min-h-screen pb-16 md:pb-0">
+
+    <!-- Top Navigation Bar -->
+    <nav class="sticky top-0 z-40 w-full glass-card border-b border-slate-800 bg-slate-900/90 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Logo & Name -->
+                <a href="#home" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg">
+                        📶
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
+                            JIBSON DATA SUB
+                        </span>
+                        <span class="block text-[10px] text-slate-400 font-medium tracking-wide">FAST • RELIABLE • TRUSTED</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+                    <a href="#home" class="hover:text-indigo-400 transition-colors">🏠 Home</a>
+                    <a href="#data" class="hover:text-indigo-400 transition-colors">📶 Data</a>
+                    <a href="#airtime" class="hover:text-indigo-400 transition-colors">📱 Airtime</a>
+                    <a href="#payment" class="hover:text-indigo-400 transition-colors">💳 Payment</a>
+                    <a href="#about" class="hover:text-indigo-400 transition-colors">ℹ️ About</a>
+                    <a href="#contact" class="hover:text-indigo-400 transition-colors">📞 Contact</a>
+                    <a href="https://t.me/JibsonDataSubBot" target="_blank" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition shadow-md shadow-indigo-600/30 flex items-center gap-2">
+                        <i class="fa-brands font-bold fa-telegram text-lg"></i> Telegram Bot
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-800 font-medium">🏠 Home</a>
+            <a href="#data" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-800 font-medium">📶 Buy SME Data</a>
+            <a href="#airtime" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-800 font-medium">📱 Buy Airtime</a>
+            <a href="#payment" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-800 font-medium">💳 Payment Details</a>
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-800 font-medium">ℹ️ About Us</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-800 font-medium">📞 Contact Admin</a>
+            <a href="https://t.me/JibsonDataSubBot" target="_blank" class="block text-center w-full py-3 mt-2 rounded-xl bg-indigo-600 text-white font-semibold flex items-center justify-center gap-2">
+                <i class="fa-brands fa-telegram text-lg"></i> Open Telegram Bot
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow space-y-16 px-4 sm:px-6 max-w-6xl mx-auto w-full pt-6">
+
+        <!-- HOME HERO SECTION -->
+        <section id="home" class="relative overflow-hidden rounded-3xl p-6 sm:p-10 glass-card bg-gradient-to-br from-indigo-950/40 via-slate-900 to-slate-950 border border-slate-800">
+            <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl space-y-6">
+                
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs sm:text-sm font-medium">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    📶 Affordable Data & Airtime ⚡ Fast • Reliable • Trusted
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    🏠 JIBSON DATA SUB
+                </h1>
+
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Welcome to <strong class="text-indigo-400">JIBSON DATA SUB</strong>. Get affordable data and airtime with an easy ordering process. Fast delivery guaranteed!
+                </p>
+
+                <!-- CTA Action Buttons -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-4">
+                    <a href="#data" class="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition transform active:scale-95">
+                        📶 Buy SME Data
+                    </a>
+                    <a href="#airtime" class="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl font-bold bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700 transition transform active:scale-95">
+                        📱 Buy Airtime
+                    </a>
+                    <a href="https://t.me/JibsonDataSubBot" target="_blank" class="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-lg shadow-sky-600/30 transition transform active:scale-95">
+                        🤖 Open Telegram Bot
+                    </a>
+                    <a href="#contact" class="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/30 transition transform active:scale-95">
+                        📞 Contact Admin
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SME DATA SECTION -->
+        <section id="data" class="space-y-6 scroll-mt-20">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center justify-center gap-2">
+                    📶 SME Data Plans
+                </h2>
+                <p class="text-slate-400 text-sm">Zabi hanyar sadarwa (Network) don ganin kunshin data da farashi</p>
+            </div>
+
+            <!-- Network Selection Tabs -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <button onclick="switchNetwork('mtn')" id="tab-mtn" class="network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-yellow-500/50 bg-yellow-500/10 text-yellow-400 font-bold">
+                    <span class="w-8 h-8 rounded-full bg-yellow-400 text-black flex items-center justify-center font-extrabold text-xs">MTN</span>
+                    🟨 MTN
+                </button>
+                <button onclick="switchNetwork('airtel')" id="tab-airtel" class="network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-slate-800 text-slate-400 hover:text-red-400 font-bold">
+                    <span class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-extrabold text-xs">AIR</span>
+                    🔴 Airtel
+                </button>
+                <button onclick="switchNetwork('glo')" id="tab-glo" class="network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-slate-800 text-slate-400 hover:text-emerald-400 font-bold">
+                    <span class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-extrabold text-xs">GLO</span>
+                    🟢 Glo
+                </button>
+                <button onclick="switchNetwork('nine')" id="tab-nine" class="network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-slate-800 text-slate-400 hover:text-green-500 font-bold">
+                    <span class="w-8 h-8 rounded-full bg-green-700 text-white flex items-center justify-center font-extrabold text-xs">9M</span>
+                    🟢 9mobile
+                </button>
+            </div>
+
+            <!-- Data Plans Grid Display -->
+            <div id="plans-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Dynamically populated via Javascript -->
+            </div>
+        </section>
+
+        <!-- AIRTIME SECTION -->
+        <section id="airtime" class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6 scroll-mt-20">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div class="space-y-2 max-w-lg">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+                        📱 Fast & Instant Recharge
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">📱 Buy Airtime (Katin Waya)</h2>
+                    <p class="text-slate-300 text-sm">
+                        Zaka iya siyan katin waya na duk hanyoyin sadarwa (MTN, Airtel, Glo, 9mobile) cikin sauki da hanzari.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="openOrderModal('Airtime Purchase', 'MTN Airtime', 'Custom Amount')" class="flex-1 sm:flex-none py-3 px-5 rounded-xl bg-yellow-500/20 border border-yellow-500/40 text-yellow-400 font-bold text-sm hover:bg-yellow-500/30 transition">
+                        🟨 MTN Airtime
+                    </button>
+                    <button onclick="openOrderModal('Airtime Purchase', 'Airtel Airtime', 'Custom Amount')" class="flex-1 sm:flex-none py-3 px-5 rounded-xl bg-red-500/20 border border-red-500/40 text-red-400 font-bold text-sm hover:bg-red-500/30 transition">
+                        🔴 Airtel Airtime
+                    </button>
+                    <button onclick="openOrderModal('Airtime Purchase', 'Glo Airtime', 'Custom Amount')" class="flex-1 sm:flex-none py-3 px-5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-bold text-sm hover:bg-emerald-500/30 transition">
+                        🟢 Glo Airtime
+                    </button>
+                    <button onclick="openOrderModal('Airtime Purchase', '9mobile Airtime', 'Custom Amount')" class="flex-1 sm:flex-none py-3 px-5 rounded-xl bg-green-500/20 border border-green-500/40 text-green-400 font-bold text-sm hover:bg-green-500/30 transition">
+                        🟢 9mobile Airtime
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAYMENT INFORMATION SECTION -->
+        <section id="payment" class="scroll-mt-20">
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950 space-y-6">
+                <div class="text-center space-y-2">
+                    <h2 class="text-2xl font-bold text-white flex items-center justify-center gap-2">
+                        💳 Payment Information (Biyan Kuɗi)
+                    </h2>
+                    <p class="text-slate-400 text-sm">Yi tura kudi zuwa wannan asusun bankin kafin ko bayan yin oda</p>
+                </div>
+
+                <div class="max-w-md mx-auto rounded-2xl bg-slate-950/80 border border-slate-800 p-6 space-y-4 shadow-xl">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <span class="text-slate-400 text-sm flex items-center gap-2">🏦 Bank:</span>
+                        <span class="font-extrabold text-emerald-400 text-base">Opay</span>
+                    </div>
+
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <span class="text-slate-400 text-sm flex items-center gap-2">👤 Account Name:</span>
+                        <span class="font-bold text-white text-base">Jibrilu Maawiya</span>
+                    </div>
+
+                    <div class="space-y-2 pt-1">
+                        <span class="text-slate-400 text-sm flex items-center gap-2">🔢 Account Number:</span>
+                        <div class="flex items-center justify-between bg-slate-900 p-3 rounded-xl border border-indigo-500/30">
+                            <span id="account-number" class="text-2xl font-black tracking-widest text-indigo-400">9160382595</span>
+                            <button onclick="copyToClipboard('9160382595', this)" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition flex items-center gap-1">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6 scroll-mt-20">
+            <div class="space-y-2 text-center">
+                <h2 class="text-2xl font-bold text-white">ℹ️ About JIBSON DATA SUB</h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Muna ba da ingantaccen sabis na sayar da data da airtime a cikin sauki da hanzari a ko da yaushe.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <div class="text-emerald-400 text-xl font-bold">✅</div>
+                    <div>
+                        <h3 class="font-bold text-white">Affordable SME Data</h3>
+                        <p class="text-slate-400 text-xs">Farashi mai sauki a duk hanyoyin sadarwa.</p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <div class="text-emerald-400 text-xl font-bold">✅</div>
+                    <div>
+                        <h3 class="font-bold text-white">Airtime Purchase</h3>
+                        <p class="text-slate-400 text-xs">Katin waya cikin sauri ba tare da jinkiri ba.</p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <div class="text-emerald-400 text-xl font-bold">✅</div>
+                    <div>
+                        <h3 class="font-bold text-white">Fast Service</h3>
+                        <p class="text-slate-400 text-xs">Ayyuka masu saurin gaske da amintattu.</p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <div class="text-emerald-400 text-xl font-bold">✅</div>
+                    <div>
+                        <h3 class="font-bold text-white">Easy Ordering</h3>
+                        <p class="text-slate-400 text-xs">Yin oda cikin dakika kalilan ta hanyar Bot ko Admin.</p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-3 sm:col-span-2 lg:col-span-2">
+                    <div class="text-emerald-400 text-xl font-bold">✅</div>
+                    <div>
+                        <h3 class="font-bold text-white">Customer Support</h3>
+                        <p class="text-slate-400 text-xs">Goyon baya da hanzari don warware duk wata matsala taku.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6 scroll-mt-20">
+            <div class="text-center space-y-2">
+                <h2 class="text-2xl font-bold text-white">📞 Contact Admin</h2>
+                <p class="text-slate-400 text-sm">Kuna iya tuntubar shugaban gudanarwa kai tsaye don taimako ko neman kararin bayani.</p>
+            </div>
+
+            <div class="max-w-md mx-auto space-y-4">
+                <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold">
+                            👤
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">Admin</span>
+                            <span class="font-bold text-white">Jibrilu Maawiya</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-bold">
+                            📞
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">Phone / WhatsApp</span>
+                            <span class="font-bold text-white">08128226039</span>
+                        </div>
+                    </div>
+                    <button onclick="copyToClipboard('08128226039', this)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300">
+                        Copy
+                    </button>
+                </div>
+
+                <!-- Direct Action Buttons -->
+                <div class="grid grid-cols-2 gap-3 pt-2">
+                    <a href="tel:08128226039" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm flex items-center justify-center gap-2 border border-slate-700">
+                        <i class="fa-solid fa-phone text-emerald-400"></i> Call Directly
+                    </a>
+                    <a href="https://wa.me/2348128226039?text=Assalamu%20Alaikum%20Jibson%20Data%20Sub" target="_blank" class="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-slate-800 py-8 bg-slate-950 text-center text-slate-500 text-xs space-y-2">
+        <p>© 2026 JIBSON DATA SUB. All Rights Reserved.</p>
+        <p class="text-slate-600">📶 Affordable Data & Airtime ⚡ Fast • Reliable • Trusted</p>
+    </footer>
+
+    <!-- INTERACTIVE ORDER MODAL -->
+    <div id="order-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center px-4 bg-black/80 backdrop-blur-sm">
+        <div class="glass-card bg-slate-900 border border-slate-700 rounded-3xl p-6 max-w-md w-full space-y-5 relative shadow-2xl">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div>
+                <h3 id="modal-title" class="text-xl font-bold text-white">Yin Oda</h3>
+                <p id="modal-plan-desc" class="text-indigo-400 font-semibold text-sm">MTN 1GB — ₦600</p>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Lambar Waya (Phone Number):</label>
+                    <input type="tel" id="order-phone" placeholder="08012345678" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 text-sm">
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-400 space-y-1">
+                    <p class="font-bold text-slate-300">Hanyar Biya (Payment):</p>
+                    <p>Opay: <strong class="text-white">9160382595</strong> (Jibrilu Maawiya)</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 pt-2">
+                    <button onclick="submitOrder('whatsapp')" class="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Order via WhatsApp
+                    </button>
+                    <a id="telegram-order-btn" href="https://t.me/JibsonDataSubBot" target="_blank" class="py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-telegram text-base"></i> Telegram Bot
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-indigo-600 text-white px-4 py-3 rounded-xl shadow-xl text-sm font-semibold flex items-center gap-2">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-message">An kwafi lambar!</span>
+    </div>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        // DATA PLANS DATABASE
+        const dataPlans = {
+            mtn: [
+                { size: '500MB', price: '₦350' },
+                { size: '1GB', price: '₦600' },
+                { size: '2GB', price: '₦1,200' },
+                { size: '3GB', price: '₦1,800' },
+                { size: '4GB', price: '₦2,400' },
+                { size: '5GB', price: '₦3,000' },
+                { size: '10GB', price: '₦6,000' }
+            ],
+            airtel: [
+                { size: '500MB', price: '₦350' },
+                { size: '1GB', price: '₦700' },
+                { size: '2GB', price: '₦1,400' },
+                { size: '3GB', price: '₦2,100' },
+                { size: '4GB', price: '₦2,800' },
+                { size: '5GB', price: '₦3,500' },
+                { size: '10GB', price: '₦7,000' }
+            ],
+            glo: [
+                { size: '500MB', price: '₦300' },
+                { size: '1GB', price: '₦500' },
+                { size: '2GB', price: '₦1,000' },
+                { size: '3GB', price: '₦1,500' },
+                { size: '4GB', price: '₦2,000' },
+                { size: '5GB', price: '₦2,500' },
+                { size: '10GB', price: '₦5,000' }
+            ],
+            nine: [
+                { size: '500MB', price: '₦300' },
+                { size: '1GB', price: '₦550' },
+                { size: '2GB', price: '₦1,100' },
+                { size: '3GB', price: '₦1,650' },
+                { size: '4GB', price: '₦2,200' },
+                { size: '5GB', price: '₦2,750' },
+                { size: '10GB', price: '₦5,500' }
+            ]
+        };
+
+        let currentNetwork = 'mtn';
+        let selectedPlan = null;
+
+        // NETWORK SWITCHER
+        function switchNetwork(network) {
+            currentNetwork = network;
+            
+            // Update tabs UI
+            document.querySelectorAll('.network-tab').forEach(tab => {
+                tab.className = "network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-slate-800 text-slate-400 font-bold hover:bg-slate-800/50";
+            });
+
+            const activeTab = document.getElementById(`tab-${network}`);
+            if (network === 'mtn') activeTab.className = "network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-yellow-500/50 bg-yellow-500/10 text-yellow-400 font-bold network-tab-active";
+            if (network === 'airtel') activeTab.className = "network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-red-500/50 bg-red-500/10 text-red-400 font-bold network-tab-active";
+            if (network === 'glo') activeTab.className = "network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-emerald-500/50 bg-emerald-500/10 text-emerald-400 font-bold network-tab-active";
+            if (network === 'nine') activeTab.className = "network-tab p-4 rounded-2xl border glass-card flex items-center justify-center gap-3 transition-all duration-200 border-green-500/50 bg-green-500/10 text-green-400 font-bold network-tab-active";
+
+            renderPlans();
+        }
+
+        // RENDER PLANS GRID
+        function renderPlans() {
+            const container = document.getElementById('plans-container');
+            const plans = dataPlans[currentNetwork];
+            
+            let networkName = currentNetwork.toUpperCase();
+            if (networkName === 'NINE') networkName = '9mobile';
+
+            container.innerHTML = plans.map(plan => `
+                <div class="p-5 rounded-2xl glass-card bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition flex items-center justify-between shadow-lg">
+                    <div class="space-y-1">
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">${networkName} SME</span>
+                        <h3 class="text-xl font-black text-white">${plan.size}</h3>
+                        <p class="text-emerald-400 font-extrabold text-lg">${plan.price}</p>
+                    </div>
+                    <button onclick="openOrderModal('${networkName} SME Data', '${plan.size}', '${plan.price}')" class="py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition shadow-md shadow-indigo-600/30 active:scale-95">
+                        Order Now
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // MODAL HANDLERS
+        function openOrderModal(type, size, price) {
+            selectedPlan = { type, size, price };
+            document.getElementById('modal-title').innerText = `Yin Oda: ${type}`;
+            document.getElementById('modal-plan-desc').innerText = `${size} — ${price}`;
+            document.getElementById('order-modal').classList.remove('hidden');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.add('hidden');
+        }
+
+        function submitOrder(channel) {
+            const phone = document.getElementById('order-phone').value;
+            if (!phone) {
+                showToast("Tuba lambar waya mana!");
+                return;
+            }
+
+            const message = `Assalamu Alaikum, ina son yin oda:\n- Service: ${selectedPlan.type}\n- Package: ${selectedPlan.size}\n- Price: ${selectedPlan.price}\n- Phone: ${phone}`;
+            
+            if (channel === 'whatsapp') {
+                const url = `https://wa.me/2348128226039?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }
+        }
+
+        // CLIPBOARD COPY
+        function copyToClipboard(text, btnElement) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast("An kwafi lambar tasu!");
+            }).catch(() => {
+                showToast("An kwafi!");
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // MOBILE MENU TOGGLE
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // INITIAL LOAD
+        window.onload = function() {
+            renderPlans();
+        }
+    </script>
+</body>
+</html>
